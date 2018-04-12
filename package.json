@@ -1,14 +1,14 @@
 {
   "name": "table-edits",
   "version": "0.0.3",
-  "description": "A lightweight jQuery plugin for making table rows tabledits",
+  "description": "A lightweight jQuery plugin for making table rows tableedits",
   "main": "src/table-edits.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nathancahill/table-edits.git"
   },
   "keywords": [
-    "jquery", "table", "tabledits"
+    "jquery", "table", "tableedits"
   ],
   "author": "Nathan Cahill <nathan@nathancahill.com>",
   "license": "MIT",
