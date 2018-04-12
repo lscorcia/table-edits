@@ -22,13 +22,13 @@ describe('Table-Edits', function() {
     });
 
     it('does not change values when initiated', function() {
-        $('table tr').editable();
+        $('table tr').tabledits();
 
         expect(this.cell.innerHTML).toBe('Hello World');
     });
 
     it('replaces cell values with input fields on edit', function() {
-        $('table tr').editable();
+        $('table tr').tabledits();
 
         this.edit.click();
 
@@ -36,7 +36,7 @@ describe('Table-Edits', function() {
     });
 
     it('sets input values to table cell values on edit', function() {
-        $('table tr').editable();
+        $('table tr').tabledits();
 
         this.edit.click();
 
@@ -44,7 +44,7 @@ describe('Table-Edits', function() {
     });
 
     it('triggers an edit on double click', function() {
-        $('table tr').editable();
+        $('table tr').tabledits();
 
         $(this.row).dblclick();
 
@@ -52,7 +52,7 @@ describe('Table-Edits', function() {
     });
 
     it('saves values on when edit is clicked again', function() {
-        $('table tr').editable();
+        $('table tr').tabledits();
 
         this.edit.click();
         this.cell.firstChild.value = 'Hi there!';
@@ -62,7 +62,7 @@ describe('Table-Edits', function() {
     });
 
     it('disables button when button is false', function() {
-        $('table tr').editable({
+        $('table tr').tabledits({
             button: false
         });
 
@@ -74,7 +74,7 @@ describe('Table-Edits', function() {
     it('allows button selector to change', function() {
         this.edit.setAttribute('class', 'change');
 
-        $('table tr').editable({
+        $('table tr').tabledits({
             buttonSelector: '.change'
         });
 
@@ -84,7 +84,7 @@ describe('Table-Edits', function() {
     });
 
     it('maintians width on edit', function() {
-        $('table tr').editable();
+        $('table tr').tabledits();
 
         var width = this.editCell.clientWidth;
 
@@ -94,7 +94,7 @@ describe('Table-Edits', function() {
     });
 
     it('supports dropdowns', function() {
-        $('table tr').editable({
+        $('table tr').tabledits({
             dropdowns: {
                 message: [
                     'Hello World',
@@ -111,13 +111,13 @@ describe('Table-Edits', function() {
     it('does not bind fields without data-field attribute', function() {
         this.edit.removeAttribute('data-field');
 
-        $('table tr').editable();
+        $('table tr').tabledits();
 
         expect(this.cell.innerHTML).toBe('Hello World');
     });
 
     it('support the enter key for save', function() {
-        $('table tr').editable();
+        $('table tr').tabledits();
 
         this.edit.click();
         this.cell.firstChild.value = 'Hi there!';
@@ -131,7 +131,7 @@ describe('Table-Edits', function() {
     });
 
     it('support the escape key for cancel', function() {
-        $('table tr').editable();
+        $('table tr').tabledits();
 
         this.edit.click();
         this.cell.firstChild.value = 'Hi there!';
@@ -145,7 +145,7 @@ describe('Table-Edits', function() {
     });
 
     it('disables keyboard when keyboard is false', function() {
-        $('table tr').editable({
+        $('table tr').tabledits({
             keyboard: false
         });
 
@@ -167,7 +167,7 @@ describe('Table-Edits', function() {
 
         spyOn(spy, 'callback');
 
-        $('table tr').editable({
+        $('table tr').tabledits({
             edit: spy.callback
         });
 
@@ -183,7 +183,7 @@ describe('Table-Edits', function() {
 
         spyOn(spy, 'callback');
 
-        $('table tr').editable({
+        $('table tr').tabledits({
             save: spy.callback
         });
 
@@ -201,7 +201,7 @@ describe('Table-Edits', function() {
 
         spyOn(spy, 'callback');
 
-        $('table tr').editable({
+        $('table tr').tabledits({
             cancel: spy.callback
         });
 

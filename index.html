@@ -72,7 +72,7 @@
       <div class="twelve columns" style="margin-top: 5%">
         <h4>$.Table Edits</h4>
         <p>
-          Table Edits is a lightweight jQuery plugin for making table rows editable.
+          Table Edits is a lightweight jQuery plugin for making table rows tabledits.
           Built as minimally as possible so it's easy to extend.
         </p>
         <table class="u-full-width demo">
@@ -132,7 +132,7 @@
         </p>
       </div>
       <div class="six columns">
-<pre><code>$("table tr").editable({
+<pre><code>$("table tr").tabledits({
     keyboard: true,
     dblclick: true,
     button: true,
@@ -149,7 +149,7 @@
       <div class="twelve columns">
         <p>
           The only additional markup <strong>Table Edits</strong> requires
-          is a <code>data-field</code> attribute on each editable cell with it's column name.
+          is a <code>data-field</code> attribute on each tabledits cell with it's column name.
         </p>
       </div>
     </div>
@@ -164,7 +164,7 @@
         </p>
       </div>
       <div class="six columns">
-<pre><code>$("table tr").editable({
+<pre><code>$("table tr").tabledits({
     save: function(values) {
       var id = $(this).data('id');
       $.post('/api/object/' + id, values);
@@ -182,7 +182,7 @@
     $(function() {
       var pickers = {};
 
-      $('table tr').editable({
+      $('table tr').tabledits({
         dropdowns: {
           sex: ['Male', 'Female']
         },

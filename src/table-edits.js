@@ -1,6 +1,6 @@
 
 ;(function ($, window, document, undefined) {
-    var pluginName = "editable",
+    var pluginName = "tabledits",
         defaults = {
             keyboard: true,
             dblclick: true,
@@ -13,7 +13,7 @@
             cancel: function() {}
         };
 
-    function editable(element, options) {
+    function tabledits(element, options) {
         this.element = element;
         this.options = $.extend({}, defaults, options) ;
 
@@ -23,7 +23,7 @@
         this.init();
     }
 
-    editable.prototype = {
+    tabledits.prototype = {
         init: function() {
             this.editing = false;
 
@@ -149,7 +149,7 @@
         return this.each(function () {
             if (!$.data(this, "plugin_" + pluginName)) {
                 $.data(this, "plugin_" + pluginName,
-                new editable(this, options));
+                new tabledits(this, options));
             }
         });
     };

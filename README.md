@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/nathancahill/table-edits.svg?branch=master)](https://travis-ci.org/nathancahill/table-edits)
 [![File Size](https://badge-size.herokuapp.com/nathancahill/table-edits/master/build/table-edits.min.js.svg?compression=gzip&label=size)](https://raw.githubusercontent.com/nathancahill/table-edits/master/build/table-edits.min.js)
 
-Table Edits is a lightweight jQuery plugin for making table rows editable. Built as minimally as possible so it's easy to extend. [Demo](http://nathancahill.github.io/table-edits/)
+Table Edits is a lightweight jQuery plugin for making table rows tabledits. Built as minimally as possible so it's easy to extend. [Demo](http://nathancahill.github.io/table-edits/)
 
 __Table Edits__ only does a couple things:
 
@@ -21,7 +21,7 @@ And __optionally__, a couple more:
 #### Options
 
 ```
-$("table tr").editable({
+$("table tr").tabledits({
     keyboard: true,
     dblclick: true,
     button: true,
@@ -36,7 +36,7 @@ $("table tr").editable({
 
 #### Markup
 
-The only additional markup __Table Edits__ requires is a `data-field` attribute on each editable cell with it's column name:
+The only additional markup __Table Edits__ requires is a `data-field` attribute on each tabledits cell with it's column name:
 
 ```
 <table>
@@ -51,7 +51,7 @@ The only additional markup __Table Edits__ requires is a `data-field` attribute 
 <table>
 ```
 
-The last cell will not become editable because it does not have the `data-field` attribute.
+The last cell will not become tabledits because it does not have the `data-field` attribute.
 
 #### Saving Table Data
 
@@ -60,7 +60,7 @@ Table Edits makes it easy to save edits. Callbacks are passed a `values` object 
 Posting the new data to an API endpoint is simple.
 
 ```
-$("table tr").editable({
+$("table tr").tabledits({
     save: function(values) {
       var id = $(this).data('id');
       $.post('/api/object/' + id, values);
