@@ -5,7 +5,9 @@
             keyboard: true,
             dblclick: true,
             button: true,
+            cancelButton: true,
             buttonSelector: ".edit",
+            cancelSelector: ".cancel",
             maintainWidth: true,
             dropdowns: {},
             edit: function() {},
@@ -36,6 +38,10 @@
             if (this.options.button) {
                 $(this.options.buttonSelector, this.element)
                     .bind('click', this.toggle.bind(this));
+            }
+            if (this.options.cancelButton) {
+                $(this.options.cancelSelector, this.element)
+                    .bind('click', this.cancel.bind(this));
             }
         },
 
