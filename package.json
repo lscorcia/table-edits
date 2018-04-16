@@ -1,6 +1,6 @@
 {
   "name": "table-edits",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A lightweight jQuery plugin for making table rows tableedits",
   "main": "src/table-edits.js",
   "repository": {
