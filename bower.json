@@ -1,11 +1,12 @@
 {
   "name": "table-edits",
-  "version": "0.0.3",
+  "version": "1.0.1",
   "authors": [
-    "Nathan Cahill <nathan@nathancahill.com>"
+    "Joe Huss <detain@interserver.net>",
+    "Nathan Cahill <nathan@detain.com>"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/nathancahill/table-edits",
+  "homepage": "https://github.com/detain/table-edits",
   "ignore": [
     "**/.*",
     "node_modules",
