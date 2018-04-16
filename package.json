@@ -23,7 +23,7 @@
     "bower": "*",
     "grunt": "*",
     "grunt-contrib-jasmine": "*",
-    "grunt-contrib-uglify": "*,
+    "grunt-contrib-uglify": "*",
     "jasmine": "*",
     "jquery": "^2.1.4"
   },
