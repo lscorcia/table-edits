@@ -107,7 +107,6 @@
         save: function() {
             var instance = this,
                 values = {};
-
             $('td[data-field]', this.element).each(function() {
                 var value = $(':input', this).val();
 
@@ -123,17 +122,16 @@
         cancel: function() {
             var instance = this,
                 values = {};
-
-            $('td[data-field]', this.element).each(function() {
-                var value = $(':input', this).data('old-value');
-
-                values[$(this).data('field')] = value;
-
-                $(this).empty()
-                       .text(value);
-            });
-
-            this.options.cancel.bind(this.element)(values);
+		if (this.editing) {
+	            this.editing = !this.editing;
+        	    $('td[data-field]', this.element).each(function() {
+                	var value = $(':input', this).data('old-value');
+	                values[$(this).data('field')] = value;
+	                $(this).empty()
+        	               .text(value);
+	            });
+	            this.options.cancel.bind(this.element)(values);
+		}
         },
 
         _captureEvent: function(e) {
