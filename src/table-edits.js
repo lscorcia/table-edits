@@ -105,8 +105,10 @@
         },
 
         save: function() {
+            this.editing = false;
             var instance = this,
                 values = {};
+
             $('td[data-field]', this.element).each(function() {
                 var value = $(':input', this).val();
 
@@ -120,18 +122,20 @@
         },
 
         cancel: function() {
+            this.editing = false;
             var instance = this,
                 values = {};
-		if (this.editing) {
-	            this.editing = !this.editing;
-        	    $('td[data-field]', this.element).each(function() {
-                	var value = $(':input', this).data('old-value');
-	                values[$(this).data('field')] = value;
-	                $(this).empty()
-        	               .text(value);
-	            });
-	            this.options.cancel.bind(this.element)(values);
-		}
+
+            $('td[data-field]', this.element).each(function() {
+                var value = $(':input', this).data('old-value');
+
+                values[$(this).data('field')] = value;
+
+                $(this).empty()
+                       .text(value);
+            });
+
+            this.options.cancel.bind(this.element)(values);
         },
 
         _captureEvent: function(e) {
@@ -140,10 +144,8 @@
 
         _captureKey: function(e) {
             if (e.which === 13) {
-                this.editing = false;
                 this.save();
             } else if (e.which === 27) {
-                this.editing = false;
                 this.cancel();
             }
         }
