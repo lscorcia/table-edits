@@ -6,13 +6,16 @@
             dblclick: true,
             button: true,
             cancelButton: true,
+            deleteButton: true,
             buttonSelector: ".edit",
             cancelSelector: ".cancel",
+            deleteSelector: ".delete",
             maintainWidth: true,
             dropdowns: {},
             edit: function() {},
             save: function() {},
-            cancel: function() {}
+            cancel: function() {},
+            delete: function() { $(this).remove(); }
         };
 
     function tableedits(element, options) {
@@ -39,9 +42,15 @@
                 $(this.options.buttonSelector, this.element)
                     .bind('click', this.toggle.bind(this));
             }
+
             if (this.options.cancelButton) {
                 $(this.options.cancelSelector, this.element)
                     .bind('click', this.cancel.bind(this));
+            }
+
+            if (this.options.deleteButton) {
+                $(this.options.deleteSelector, this.element)
+                    .bind('click', this.delete.bind(this));
             }
         },
 
@@ -136,6 +145,13 @@
             });
 
             this.options.cancel.bind(this.element)(values);
+        },
+
+        delete: function() {
+            if (this.editing)
+                this.cancel();
+
+            this.options.delete.bind(this.element)();
         },
 
         _captureEvent: function(e) {
