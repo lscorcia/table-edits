@@ -15,7 +15,7 @@
             edit: function() {},
             save: function() {},
             cancel: function() {},
-            delete: function() { $(this).remove(); }
+            deleteitem: function() { $(this).remove(); }
         };
 
     function tableedits(element, options) {
@@ -50,7 +50,7 @@
 
             if (this.options.deleteButton) {
                 $(this.options.deleteSelector, this.element)
-                    .bind('click', this.delete.bind(this));
+                    .bind('click', this.deleteitem.bind(this));
             }
         },
 
@@ -147,11 +147,11 @@
             this.options.cancel.bind(this.element)(values);
         },
 
-        delete: function() {
+        deleteitem: function() {
             if (this.editing)
                 this.cancel();
 
-            this.options.delete.bind(this.element)();
+            this.options.deleteitem.bind(this.element)();
         },
 
         _captureEvent: function(e) {
